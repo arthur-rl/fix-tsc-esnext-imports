@@ -11,7 +11,8 @@ function buildFilesMap(dir, map) {
     if (!map) {
         map = {};
     }
-    fs.readdirSync(dir).forEach(file => {
+    const files = fs.readdirSync(dir);
+    for(const file of files) {
         const resolvedFile = path.join(dir, file);
         if (fs.statSync(resolvedFile).isDirectory()) {
             buildFilesMap(resolvedFile, map);
@@ -20,7 +21,7 @@ function buildFilesMap(dir, map) {
                 dir, file, resolvedFile
             };
         }
-    })
+    };
     return map;
 }
 
