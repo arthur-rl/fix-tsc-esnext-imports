@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const chalk = require("chalk");
 
 const args = process.argv.slice(2);
 if (args.length !== 1) {
@@ -39,9 +40,9 @@ function fixImports(allFiles, fileInfo) {
             } else {
                 newLine = match[1] + match[2] + match[3] + "/index.js" + match[4];
             }
-            console.log(fileInfo.file);
-            console.log(line);
-            console.log(newLine);
+            console.log(chalk.yellow(`fixing file${fileInfo.file}`));
+            console.log(chalk.red(line));
+            console.log(chalk.green(newLine));
             console.log("");
             return newLine;
         } else {

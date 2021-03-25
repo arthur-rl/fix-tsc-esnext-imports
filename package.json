@@ -16,5 +16,8 @@
   },
   "homepage": "https://www.npmjs.com/package/fix-tsc-esnext-imports",
   "author": "Jake Tober",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
 }
